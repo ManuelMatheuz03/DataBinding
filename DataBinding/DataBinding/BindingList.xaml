@@ -12,10 +12,21 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <Grid>
-            <ListView ItemsSource="{Binding Personas, Source={StaticResource datosUno}}">
+        <Grid BindingContext="{Binding Source={StaticResource datosUno}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <ListView ItemsSource="{Binding Personas}"
+                      SelectedItem="{Binding PersonaSeleccionada, Mode=TwoWay}">
                 
             </ListView>
+            <StackLayout Grid.Row="1"
+                         BindingContext="{Binding PersonaSeleccionada}">
+                <Label Text="{Binding Nombre, Mode=TwoWay}"></Label>
+                <Label Text="{Binding Pais, Mode=TwoWay}"></Label>
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -12,6 +12,8 @@ namespace DataBinding
 		public MainPage()
 		{
 			InitializeComponent();
+
+
             BotondeEnvio.Clicked += BotonEnviar_Clicked;
 
 		}

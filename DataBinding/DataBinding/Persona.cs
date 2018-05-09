@@ -51,12 +51,11 @@ namespace DataBinding
         }
 
         #endregion
-
-        #region Implementacion
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
+        
+        #region Metodos
+        public override string ToString()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            return $"{Nombre} | {Pais}";
         }
         #endregion
     }
